@@ -1,0 +1,9 @@
+project: savantenvs/edgedb
+target: unquote
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/unquote/testsuite
+cmds:
+  - cmd: /mayhem/unquote
+    libfuzzer: true
+    timeout: 10

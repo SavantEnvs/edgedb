@@ -1,0 +1,9 @@
+project: savantenvs/edgedb
+target: tokenizer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/tokenizer/testsuite
+cmds:
+  - cmd: /mayhem/tokenizer
+    libfuzzer: true
+    timeout: 10

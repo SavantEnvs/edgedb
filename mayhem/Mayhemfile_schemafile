@@ -1,0 +1,9 @@
+project: savantenvs/edgedb
+target: schemafile
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/schemafile/testsuite
+cmds:
+  - cmd: /mayhem/schemafile
+    libfuzzer: true
+    timeout: 10

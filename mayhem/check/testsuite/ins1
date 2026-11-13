@@ -1,0 +1,1 @@
+insert Foo { bar := <str>$0, baz := b"\x00\xff" }

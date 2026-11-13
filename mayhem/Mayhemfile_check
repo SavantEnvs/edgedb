@@ -1,0 +1,9 @@
+project: savantenvs/edgedb
+target: check
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/check/testsuite
+cmds:
+  - cmd: /mayhem/check
+    libfuzzer: true
+    timeout: 10

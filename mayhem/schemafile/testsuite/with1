@@ -1,0 +1,1 @@
+with x := (select 1), y := x union all for z in {1,2} union (z)

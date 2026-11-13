@@ -1,0 +1,52 @@
+[package]
+name = "edgeql-parser-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.edgeql-parser]
+path = "../../edb/edgeql-parser"
+features = ["serde"]
+
+# Prevent this from interfering with the repo workspace
+[workspace]
+members = ["."]
+
+[profile.release]
+debug = 1
+
+[[bin]]
+name = "check"
+path = "fuzz_targets/check.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "tokenizer"
+path = "fuzz_targets/tokenizer.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "preparser"
+path = "fuzz_targets/preparser.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "schemafile"
+path = "fuzz_targets/schemafile.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "unquote"
+path = "fuzz_targets/unquote.rs"
+test = false
+doc = false
